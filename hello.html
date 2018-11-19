@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<!--{{masages}}		变量接受	差值表达式-->
+			<div v-html="msg"></div>
+			<div v-bind:title="temp">clearbobo</div>
+			<input type="checkbox" v-bind:checked="flag"/>
+			<input type="checkbox" v-model:checkbox="flag"/>
+			<input type="text" v-model="masages" maxlength="20"/>还可以输入{{20-masages.length}}
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#box",		//挂载，管理元素
+				data:{			//数据写在data里
+					masages:"hello world",		//变量
+					temp:"clearbobo",
+					msg:"<h1>v-html</h1>",
+					flag:true
+				},
+				//template:"<p>{{temp}}</p>"  		模板
+			})
+		</script>
+	</body>
+</html>
