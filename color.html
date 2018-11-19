@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<p>宽：<input type="number" v-model="width"/></p>
+			<p>高：<input type="number" v-model="height"/></p>
+			<input type="range" min="0" max="255" v-model="r"/>
+			<input type="range" min="0" max="255" v-model="g"/>
+			<input type="range" min="0" max="255" v-model="b"/>
+			<!--<input type="color" v-model="bg"/>-->
+			<div class="color" :style="{width:width+'px',height:height+'px',background:'rgb('+r+','+g+','+b+')'}">clearbobo</div>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					width:200,
+					height:200,
+					//bg:"#ccc"
+					r:0,
+					g:0,
+					b:0
+				}
+			})
+		</script>
+	</body>
+</html>
